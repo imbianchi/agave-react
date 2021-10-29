@@ -1,0 +1,105 @@
+@import '../../scss/mixin.scss';
+
+.home {
+  z-index: 1;
+
+  .title {
+    text-align : center;
+    font-size  : 1.25rem;
+    font-weight: bold;
+    color      : grey;
+  }
+
+  .profiles {
+    display        : flex;
+    flex-direction : row;
+    justify-content: center;
+  }
+
+  .projects {
+    text-align: center;
+    color     : grey;
+
+    .desc {
+      b {
+        color: black;
+      }
+    }
+  }
+
+  .category {
+    margin: 12px 0px;
+  }
+
+  .premio {
+    display        : flex;
+    flex-direction : row;
+    justify-content: space-evenly;
+    align-items    : center;
+    margin         : 36px 0px;
+
+    img {
+      width: 400px;
+    }
+
+    .buttons {
+      text-align: center;
+      margin    : 12px 0px;
+
+    }
+  }
+
+  .inscricoes {
+    // display        : flex;
+    // flex-direction : row;
+    // justify-content: center;
+    // align-items    : end;
+    // margin         : 48px 0px;
+    position: absolute;
+    width   : 100%;
+    bottom  : 120px;
+
+    p {
+      position   : absolute;
+      width      : 100%;
+      text-align : center;
+      font-weight: bold;
+      color      : grey;
+    }
+
+    img {
+      position: absolute;
+      right   : 24px;
+      height  : 80px;
+      width   : auto;
+    }
+  }
+
+  @include under-tablet {
+    & {
+      padding: 0px 12px;
+    }
+
+    .profiles,
+    .premio {
+      flex-direction: column;
+    }
+
+    .premio {
+      img {
+        max-width: 400px;
+        width    : 80%;
+      }
+    }
+
+    .inscricoes {
+      position: static;
+
+      img {
+        right : 12px;
+        width : 60px;
+        height: auto;
+      }
+    }
+  }
+}

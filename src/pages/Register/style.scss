@@ -1,0 +1,119 @@
+@import '../../scss/mixin.scss';
+
+.jurors {
+  z-index: 1;
+
+  .app-row {
+    &.stretch {
+      width          : 100%;
+      justify-content: space-between;
+
+      .app-col {
+        width: 45%;
+      }
+    }
+
+    display        : flex;
+    flex-direction : row;
+    justify-content: space-evenly;
+    margin         : 0 auto;
+    width          : 80%;
+
+    .app-col {
+      width: 40%;
+    }
+  }
+
+  .upload {
+    height          : 28px;
+    width           : 80px;
+    padding         : 0px;
+    color           : grey;
+    margin          : 4px 0px;
+    border-radius   : 8px;
+    background-color: white;
+    border          : 1px solid grey;
+    outline         : none;
+    cursor          : pointer;
+
+    &:hover {
+      border-color: black;
+      color       : black;
+    }
+  }
+
+  .text {
+    display  : block;
+    color    : grey;
+    font-size: 12px;
+  }
+
+  .datas,
+  .informations {
+    min-height: 360px;
+  }
+
+  .cep {
+    min-height: 200px;
+  }
+
+  p.error {
+    color    : red;
+    font-size: 10px;
+    margin   : 0px 0px 4px 0px;
+  }
+
+  .check-term {
+    display: flex;
+  }
+
+  @include under-desktop {
+    .app-row {
+      &.stretch {
+        width          : 100%;
+        justify-content: space-between;
+
+        .app-col {
+          width: 48%;
+        }
+      }
+
+      justify-content: space-between;
+      width          : 90%;
+
+      .app-col {
+        width: 48%;
+      }
+    }
+  }
+
+  @include under-tablet {
+    .app-row {
+      &.stretch {
+        width          : 100%;
+        justify-content: space-between;
+
+        .app-col {
+          width: 100%;
+        }
+      }
+
+      flex-direction : column;
+      justify-content: center;
+      width          : 90%;
+
+      .app-col {
+        width: 100%;
+      }
+    }
+
+    .cep {
+      min-height: auto;
+    }
+  }
+
+  @include under-phone {
+    width  : 100%;
+    padding: 0px 16px;
+  }
+}

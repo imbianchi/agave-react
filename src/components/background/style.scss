@@ -1,0 +1,99 @@
+@import '../../scss/mixin.scss';
+
+.background {
+  position  : fixed;
+  top       : 20px;
+  left      : 20px;
+  right     : 20px;
+  bottom    : 20px;
+  z-index   : 0;
+  overflow  : hidden;
+  text-align: center;
+
+  .part1 {
+    top    : -0px;
+    left   : -0px;
+    height : 400px;
+    opacity: 1;
+  }
+
+  .part2 {
+    top   : 140px;
+    right : -160px;
+    height: 400px;
+  }
+
+  .part3 {
+    bottom: -140px;
+    left  : 160px;
+    height: 400px;
+  }
+
+  img {
+    opacity : 0.2;
+    position: absolute;
+    z-index : 0;
+  }
+
+  @include under-desktop {
+    .part1 {
+      top   : -10px;
+      left  : -60px;
+      height: 360px;
+    }
+
+    .part2 {
+      top   : 140px;
+      right : -160px;
+      height: 360px;
+    }
+
+    .part3 {
+      bottom: -60px;
+      left  : 120px;
+      height: 320px;
+    }
+  }
+
+  @include under-tablet {
+    .part1 {
+      top   : 0px;
+      left  : -40px;
+      height: 280px;
+    }
+
+    .part2 {
+      top   : 200px;
+      right : -160px;
+      height: 300px;
+    }
+
+    .part3 {
+      bottom: -120px;
+      left  : 60px;
+      height: 280px;
+    }
+  }
+
+  @include under-phone {
+    .part1 {
+      top   : 0px;
+      left  : 0px;
+      height: 240px;
+    }
+
+    .part2 {
+      top   : 300px;
+      right : -160px;
+      height: 300px;
+    }
+
+    .part3 {
+      bottom: -120px;
+      left  : 20px;
+      height: 240px;
+    }
+  }
+
+
+}

@@ -1,0 +1,88 @@
+@import '../../scss/mixin.scss';
+
+.background {
+    position  : fixed;
+    top       : 0;
+    left      : 0;
+    right     : 0;
+    bottom    : 0;
+    z-index   : 0;
+    text-align: center;
+
+    img {
+        opacity: 0.2;
+    }
+
+    .above {
+        display        : flex;
+        flex-direction : row;
+        justify-content: space-between;
+
+        .part1 {
+            width: 40%;
+        }
+
+        .part2 {
+            width: 40%;
+        }
+    }
+
+    .part3 {
+        position: absolute;
+        bottom  : -100px;
+        left    : 120px;
+        width   : 30%;
+    }
+
+    @include under-desktop {
+        .above {
+            flex-direction: column;
+
+            .part1 {
+                position: absolute;
+                left    : -200px;
+                width   : 400px;
+            }
+
+            .part2 {
+                position: absolute;
+                right   : -100px;
+                top     : 300px;
+                width   : 400px;
+            }
+        }
+        .part3 {
+            left  : 0;
+            bottom: -40px;
+            width : 50%;
+        }
+    }
+
+    @include under-tablet {
+        .above {
+            flex-direction: column;
+
+            .part1 {
+                position: absolute;
+                left    : -200px;
+                width   : 400px;
+            }
+
+            .part2 {
+                position: absolute;
+                right   : -100px;
+                top     : 300px;
+                width   : 400px;
+            }
+        }
+
+        .part3 {
+            left     : 0;
+            bottom   : -40px;
+            width    : 80%;
+            max-width: 500px;
+        }
+    }
+
+
+}

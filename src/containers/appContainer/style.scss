@@ -1,0 +1,63 @@
+@import '../../scss/mixin.scss';
+
+.app {
+  position       : relative;
+  min-height     : 100vh;
+  display        : flex;
+  flex-direction : column;
+  align-items    : stretch;
+  justify-content: space-between;
+  z-index        : 1;
+
+  .contact {
+    width     : 100%;
+    position  : absolute;
+    bottom    : 92px;
+    text-align: right;
+
+    p {
+      width      : 100%;
+      text-align : center;
+      position   : absolute;
+      bottom     : 0;
+      font-weight: bold;
+      color      : grey;
+    }
+
+    img {
+      height      : 80px;
+      margin-right: 24px;
+    }
+
+    @include under-desktop {}
+
+    @include under-tablet {
+
+      & {
+        position  : relative;
+        bottom    : 0;
+        text-align: right;
+        width     : 100%;
+
+        img {
+          height       : 60px;
+          margin-bottom: 12px;
+          margin-right : 18px;
+        }
+      }
+    }
+
+    @include under-phone {
+      & {
+        p {
+          font-size: 14px;
+        }
+
+        img {
+          height      : 48px;
+          margin-right: 8px;
+        }
+      }
+    }
+  }
+}

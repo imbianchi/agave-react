@@ -1,0 +1,43 @@
+@import '../../scss/mixin.scss';
+
+.rule {
+    width : 75%;
+    margin: 0 auto;
+    z-index: 1;
+    .text {
+        margin-top: 24px;
+    }
+
+    .logo {
+        position  : absolute;
+        bottom    : 80px;
+        right     : 24px;
+        text-align: right;
+
+        img {
+            height: 80px;
+        }
+    }
+
+    @include under-desktop {}
+
+    @include under-tablet {
+        & {
+            width  : 100%;
+            padding: 0 24px;
+        }
+    }
+
+    @include under-phone {
+        .logo {
+            position  : static;
+            text-align: right;
+            width     : 100%;
+
+            img {
+                height       : 60px;
+                margin-bottom: 12px;
+            }
+        }
+    }
+}

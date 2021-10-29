@@ -1,0 +1,15 @@
+import './style.scss'
+const Background = () => {
+    return (
+        <div className='background'>
+            <div className='above'>
+                <img className='part1' src='/assets/sofa.jpeg' />
+                <img className='part2' src='/assets/chair.jpeg' />
+            </div>
+            <img className='part3' src='/assets/sofa.jpeg' />
+
+        </div>
+    )
+}
+
+export default Background

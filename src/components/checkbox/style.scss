@@ -1,0 +1,30 @@
+.checkbox-container {
+  .checkbox {
+    position      : relative;
+    width         : 24px;
+    height        : 24px;
+    margin-right  : 8px;
+    border-radius : 6px;
+    border        : 1px solid grey;
+    text-align    : center;
+    padding-bottom: 4px;
+    flex-shrink   : 0;
+    cursor        : pointer;
+
+    &:hover {
+      border-color: dodgerblue;
+    }
+
+    &.checked {
+      border-color: dodgerblue;
+      color       : dodgerblue;
+    }
+  }
+
+  .check-error {
+    color        : red;
+    font-size    : 10px;
+    margin       : 0;
+    margin-bottom: 4px;
+  }
+}

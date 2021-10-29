@@ -1,0 +1,29 @@
+@import '../../scss/mixin.scss';
+
+.footer {
+    position        : absolute;
+    bottom          : 0;
+    width           : 100%;
+    background-color: black;
+    text-align      : center;
+
+    .social-links {
+        img {
+            height: 30px;
+            margin: 12px 12px 6px;
+        }
+    }
+
+    .title {
+        color : white;
+        margin-bottom: 12px;
+    }
+
+    @include under-tablet {
+        & {
+            position: relative;
+        }
+
+    }
+
+}

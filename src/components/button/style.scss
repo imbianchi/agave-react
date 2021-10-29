@@ -1,0 +1,18 @@
+.button {
+  width           : auto;
+  min-width       : 80px;
+  padding         : 4px 12px;
+  margin          : 8px 12px;
+  text-align      : center;
+  color           : white;
+  background-color: black;
+  border          : 1px solid black;
+  border-radius   : 4px;
+  text-decoration : none;
+  transition      : all 0.3s ease-in-out;
+
+  &:hover {
+    background-color: white;
+    color           : black;
+  }
+}

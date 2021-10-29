@@ -1,0 +1,23 @@
+.input {
+  input {
+    width           : 100%;
+    height          : 28px;
+    margin          : 4px 0px;
+    background-color: transparent;
+    outline         : none;
+    border          : none;
+    border-bottom   : 1px solid grey;
+  }
+
+  &.error {
+    input {
+      border-color: red;
+    }
+  }
+
+  span.error {
+    margin   : 0;
+    color    : red;
+    font-size: 10px;
+  }
+}
