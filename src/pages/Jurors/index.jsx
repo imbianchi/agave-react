@@ -16,7 +16,7 @@ const Jurors = () => {
         <div className='projects'>
           <p className='desc'><b>Projeto Residencial</b> - Prêmio Poltrona Diz por Sergio Rodrigues.</p>
           <p className='desc'><b>Projeto corporativo</b> - Prêmio Poltrona Shell por estudiobola.</p>
-          <p className='desc'><b>Projeto outdoor</b> - Prêmio Balanco Pendulo por Ruy Ohtake para Tidelli.</p>
+          <p className='desc'><b>Projeto outdoor</b> - Prêmio Balanço Pêndulo por Ruy Ohtake para Tidelli.</p>
         </div>
       </div>
       <div className='premio'>
