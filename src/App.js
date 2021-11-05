@@ -7,6 +7,8 @@ import 'bootstrap/dist/css/bootstrap.css';
 import './index.css';
 
 const App = () => {
+  document.title = 'Premio Agave de Arquitetura';
+
   return (
     <AppContainer showText={window.location.pathname == '/'}>
       <Switch>

@@ -2,8 +2,10 @@ import Input from '../../components/input'
 import RichInput from '../../components/richInput'
 import Button from '../../components/button'
 import CustomSelect from '../../components/select'
+import { isMobile } from 'react-device-detect';
 import './style.scss'
 import Checkbox from '../../components/checkbox'
+import { Tooltip } from 'reactstrap';
 import { useState } from 'react'
 import { postApi } from '../../apis/apis'
 import apiUrls from '../../apis/apiUrls'
@@ -11,6 +13,7 @@ import apiUrls from '../../apis/apiUrls'
 const Register = () => {
   const [loading, setLoading] = useState(false);
   const [submitButtonText, setSubmitButtonText] = useState('ENVIAR');
+  const [tooltipOpen, setTooltipOpen] = useState(false);
   const [values, setValues] = useState({
     name: '', birthday: '', cpf: '', profession: '', rnumber: '', instagram: '', email: '', mobile: '', tel: '', cep: '', addr: '', complement: '', city: '', projName: '', projDesc: '', projType: 0, link: ''
   })
@@ -43,6 +46,7 @@ const Register = () => {
       return { ...prevValues }
     })
   }
+
   const _setErrors = (name, value) => {
     setErrors((prevErrors) => {
       prevErrors[name] = value
@@ -54,15 +58,18 @@ const Register = () => {
     _setValues(name, value)
     if (value) _setErrors(name, '')
   }
+
   const onCheckboxChange = (checked) => {
     if (checked)
       _setErrors('check', '')
     setChecked(checked)
   }
+
   const onProjTypeChange = (value) => {
     if (value.value > 0) _setErrors('projType', '')
     _setValues('projType', value.value)
   }
+
   const onSubmit = async () => {
     for (var key in info) {
       if (!values[key] && !info[key].nullable) {
@@ -86,6 +93,7 @@ const Register = () => {
       setSubmitButtonText('ERRO ):');
     }
   }
+
   return (
     <div className='jurors'>
       <div className='app-row'>
@@ -184,18 +192,33 @@ const Register = () => {
             </div>
           </div>
           <div className='app-row stretch'>
-            <div className='w-full'>
-              <Input tooltip="teste" placeholder='Link drive (dropbox, google drive, icloud) com as imagens reais do projeto (de 3 a 5 fotos), nos formatos (jeg ou png).'
-                onChange={(e) => onChange('link', e.target.value)} error={errors.link} />
+            <div
+              className='w-full'
+              id="TooltipExample"
+            >
+              <Tooltip placement="top" isOpen={tooltipOpen} target="TooltipExample" toggle={() => setTooltipOpen(!tooltipOpen)}>
+                Link drive (dropbox, google drive, icloud) com as imagens reais do projeto (de 3 a 5 fotos), nos formatos (jeg ou png).
+              </Tooltip>
+              {
+                isMobile && (
+                  <small>Link drive (dropbox, google drive, icloud) com as imagens reais do projeto (de 3 a 5 fotos), nos formatos (jeg ou png).</small>
+                )
+              }
+              <Input
+                placeholder={isMobile ? '' : 'Link drive (dropbox, google drive, icloud) com as imagens reais do projeto (de 3 a 5 fotos), nos formatos (jeg ou png).'}
+                onChange={(e) => onChange('link', e.target.value)} error={errors.link}
+              />
             </div>
           </div>
         </div>
       </div>
       <div className='app-row'>
         <div className='app-col'>
-          <Checkbox onChange={onCheckboxChange}
+          <Checkbox
+            onChange={onCheckboxChange}
             label='Autorizo a coleta dos meus dados pessoais para cadastro nos programas de relacionamento Agave.
-            Aceito receber comunicações sobre as marcas e produtos Agave via e-mail ou WhatsApp.'
+            Aceito receber comunicações sobre as marcas e produtos Agave via e-mail ou WhatsApp.
+            Reconheço que li e aceito todos os termos do “Regulamento” disponibilizado no https://agavecasa.com.br/rule.'
             error={errors.check}
           />
 
