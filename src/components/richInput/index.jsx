@@ -10,6 +10,7 @@ const RichInput = ({ onChange, error }) => {
           {text ? '' : <span>Breve descritivo do projeto <span className='smaller'>(max 400 caracteres)</span>*</span>}
         </p>
         <textarea
+        maxLength={400}
           onChange={(e) => {
             setText(e.target.value)
             onChange(e)

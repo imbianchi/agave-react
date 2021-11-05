@@ -1,12 +1,12 @@
 .richinput {
-  width : 100%;
+  width: 100%;
   margin: 4px 0px;
 
   .placeholder {
-    position  : absolute;
-    z-index   : 0;
+    position: absolute;
+    z-index: 0;
     margin-top: 4px;
-    color     : grey;
+    color: grey;
 
     span .smaller {
       font-size: 11px;
@@ -14,20 +14,31 @@
   }
 
   textarea {
-    z-index         : 1;
-    width           : 100%;
-    max-height      : 160px;
-    height          : 160px;
-    outline         : none;
+    z-index: 1;
+    width: 100%;
+    resize: none;
+    max-height: 160px;
+    height: 160px;
+    outline: none;
     background-color: transparent;
-    border          : none;
-    max-lines       : 10;
-    line-height     : 31px;
-    background-image: -webkit-linear-gradient(transparent 10px, transparent 10px), -webkit-linear-gradient(transparent 10px, transparent 10px), -webkit-linear-gradient(transparent 30px, grey 30px, grey 31px, transparent 31px);
-    background-image: -moz-linear-gradient(transparent 10px, transparent 10px), -moz-linear-gradient(transparent 10px, transparent 10px), -moz-linear-gradient(transparent 30px, grey 30px, grey 31px, transparent 31px);
-    background-image: -ms-linear-gradient(transparent 10px, transparent 10px), -ms-linear-gradient(transparent 10px, transparent 10px), -ms-linear-gradient(transparent 30px, grey 30px, grey 31px, transparent 31px);
-    background-image: -o-linear-gradient(transparent 10px, transparent 10px), -o-linear-gradient(transparent 10px, transparent 10px), -o-linear-gradient(transparent 30px, grey 30px, grey 31px, transparent 31px);
-    background-image: linear-gradient(transparent 10px, transparent 10px), linear-gradient(transparent 10px, transparent 10px), linear-gradient(transparent 30px, grey 30px, grey 31px, transparent 31px);
-    background-size : 100% 100%, 100% 100%, 100% 31px;
+    border: none;
+    max-lines: 10;
+    line-height: 31px;
+    background-image: -webkit-linear-gradient(transparent 10px, transparent 10px),
+      -webkit-linear-gradient(transparent 10px, transparent 10px),
+      -webkit-linear-gradient(transparent 30px, grey 30px, grey 31px, transparent 31px);
+    background-image: -moz-linear-gradient(transparent 10px, transparent 10px),
+      -moz-linear-gradient(transparent 10px, transparent 10px),
+      -moz-linear-gradient(transparent 30px, grey 30px, grey 31px, transparent 31px);
+    background-image: -ms-linear-gradient(transparent 10px, transparent 10px),
+      -ms-linear-gradient(transparent 10px, transparent 10px),
+      -ms-linear-gradient(transparent 30px, grey 30px, grey 31px, transparent 31px);
+    background-image: -o-linear-gradient(transparent 10px, transparent 10px),
+      -o-linear-gradient(transparent 10px, transparent 10px),
+      -o-linear-gradient(transparent 30px, grey 30px, grey 31px, transparent 31px);
+    background-image: linear-gradient(transparent 10px, transparent 10px),
+      linear-gradient(transparent 10px, transparent 10px),
+      linear-gradient(transparent 30px, grey 30px, grey 31px, transparent 31px);
+    background-size: 100% 100%, 100% 100%, 100% 31px;
   }
 }

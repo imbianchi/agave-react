@@ -4,7 +4,6 @@ import Button from '../../components/button'
 import CustomSelect from '../../components/select'
 import './style.scss'
 import Checkbox from '../../components/checkbox'
-import File from '../../components/file'
 import { useState } from 'react'
 import { postApi } from '../../apis/apis'
 import apiUrls from '../../apis/apiUrls'
@@ -102,11 +101,11 @@ const Register = () => {
             </div>
             <div className='app-row stretch'>
               <div className='app-col'>
-                <Input placeholder='profissao*'
+                <Input placeholder='profissão*'
                   onChange={(e) => onChange('profession', e.target.value)} error={errors.profession} />
               </div>
               <div className='app-col'>
-                <Input placeholder='n de registro*'
+                <Input placeholder='n° de registro*'
                   onChange={(e) => onChange('rnumber', e.target.value)} error={errors.rnumber} />
               </div>
             </div>
@@ -140,7 +139,7 @@ const Register = () => {
               </div>
               <div className='app-col'></div>
             </div>
-            <Input placeholder='endereco, numero*'
+            <Input placeholder='endereço, número*'
               onChange={(e) => onChange('addr', e.target.value)} error={errors.addr} />
             <div className='app-row stretch'>
               <div className='app-col'>
@@ -157,7 +156,7 @@ const Register = () => {
         <div className='app-col'>
           <div className='h-72'></div>
           <div className='informations'>
-            <p className='app-title'>INFORMACOES DO PROJETO</p>
+            <p className='app-title'>INFORMAÇÕES DO PROJETO</p>
             <div className='h-20'></div>
             <CustomSelect options={[
               { value: 0, 'label': 'Outdoor' },
@@ -179,13 +178,8 @@ const Register = () => {
           </div>
           <div className='app-row stretch'>
             <div className='w-full'>
-              <Input placeholder='Link'
+              <Input tooltip="teste" placeholder='Link drive (dropbox, google drive, icloud) com as imagens reais do projeto (de 3 a 5 fotos), nos formatos (jeg ou png).'
               onChange={(e)=>onChange('link', e.target.value)} error = {errors.link} />
-              {/* <File onChange={onPickFile} />
-              <p className='text'>
-                Enviar 1(um) arquivo no formato .zip com as imagens reais do projeto (de 3 a 5 fotos), nos formatos (jeg, png).
-                <br />Max 30mb
-              </p> */}
             </div>
           </div>
         </div>
@@ -193,8 +187,8 @@ const Register = () => {
       <div className='app-row'>
         <div className='app-col'>
           <Checkbox onChange={onCheckboxChange}
-            label='Autorizo a coleta dos meus dados pessoeis para cadastro nos programas de relacionamento Agave.<br />
-            Aceito receber comunicacoes sobre as marcas e produtos Agave via e-mail ou WhatsApp.'
+            label='Autorizo a coleta dos meus dados pessoais para cadastro nos programas de relacionamento Agave.
+            Aceito receber comunicações sobre as marcas e produtos Agave via e-mail ou WhatsApp.'
             error={errors.check}
           />
 

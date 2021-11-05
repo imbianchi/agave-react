@@ -10,10 +10,10 @@ const App = () => {
   return (
     <AppContainer showText={window.location.pathname == '/'}>
       <Switch>
-        <Route exact path="/" component={() => <Redirect to='/jurors' />}  />
+        <Route exact path="/" component={() => <Redirect to='/premioagave' />}  />
         <Route path="/register" component={Register} />
         <Route path="/rule" component={Rule} />
-        <Route path="/jurors" component={Jurors} />
+        <Route path="/premioagave" component={Jurors} />
       </Switch>
 
     </AppContainer>
