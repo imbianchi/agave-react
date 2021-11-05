@@ -9,11 +9,13 @@ import { postApi } from '../../apis/apis'
 import apiUrls from '../../apis/apiUrls'
 
 const Register = () => {
+  const [loading, setLoading] = useState(false);
+  const [submitButtonText, setSubmitButtonText] = useState('ENVIAR');
   const [values, setValues] = useState({
-    name: '', birthday: '', cpf: '', profession: '', rnumber: '', instagram: '', email: '', mobile: '', tel: '', cep: '', addr: '', complement: '', city: '', projName: '', projDesc: '', projType: 0, link:''
+    name: '', birthday: '', cpf: '', profession: '', rnumber: '', instagram: '', email: '', mobile: '', tel: '', cep: '', addr: '', complement: '', city: '', projName: '', projDesc: '', projType: 0, link: ''
   })
   const [errors, setErrors] = useState({
-    name: '', birthday: '', cpf: '', profession: '', rnumber: '', instagram: '', email: '', mobile: '', tel: '', cep: '', addr: '', complement: '', city: '', projName: '', projDesc: '', check: '', projType: '', link:''
+    name: '', birthday: '', cpf: '', profession: '', rnumber: '', instagram: '', email: '', mobile: '', tel: '', cep: '', addr: '', complement: '', city: '', projName: '', projDesc: '', check: '', projType: '', link: ''
   })
   const [checked, setChecked] = useState(false)
   const info = {
@@ -31,8 +33,8 @@ const Register = () => {
     complement: { title: 'complemento', nullable: true },
     city: { title: 'cidade, estado', nullable: false },
     projName: { title: 'nome de projeto', nullable: false },
-    projDesc: { title: 'Breve descritivo do projeto', nullable: false },
-    link: {title: 'Link', nullable: true}
+    projDesc: { title: 'breve descritivo do projeto', nullable: false },
+    link: { title: 'Link', nullable: true }
   }
   const validateEmail = (email) => /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email.toLowerCase())
   const _setValues = (name, value) => {
@@ -61,9 +63,6 @@ const Register = () => {
     if (value.value > 0) _setErrors('projType', '')
     _setValues('projType', value.value)
   }
-  const onPickFile = (e) => {
-    console.log(e)
-  }
   const onSubmit = async () => {
     for (var key in info) {
       if (!values[key] && !info[key].nullable) {
@@ -74,10 +73,18 @@ const Register = () => {
     }
     if (!validateEmail(values.email)) return _setErrors('email', 'Formato do endereço de e-mail é inválido.')
     if (values.projType == 0) return _setErrors('projType', 'Selecione o tipo.')
-    if (values.projDesc.length > 400) return _setErrors('projDesc', 'O Breve descritivo do projeto deve ter no máximo 400 caracteres.')
-    if (!checked) return _setErrors('check', 'Aceite este acordo.')
+    if (values.projDesc.length > 400) return _setErrors('projDesc', 'O descritivo do projeto deve ter no máximo 400 caracteres.')
+    if (!checked) return _setErrors('check', 'Obrigatório aceitar o acordo para participar.')
+
+    setLoading(true);
 
     const res = await postApi(`${apiUrls.contestRegister}`, values, false)
+
+    if (res.status === 200) {
+      setSubmitButtonText('ENVIADO!');
+    } else {
+      setSubmitButtonText('ERRO ):');
+    }
   }
   return (
     <div className='jurors'>
@@ -159,9 +166,9 @@ const Register = () => {
             <p className='app-title'>INFORMAÇÕES DO PROJETO</p>
             <div className='h-20'></div>
             <CustomSelect options={[
-              { value: 0, 'label': 'Outdoor' },
-              { value: 1, 'label': 'Residencial' },
-              { value: 2, 'label': 'Corporativo' }
+              { value: 'outdoor', 'label': 'Outdoor' },
+              { value: 'residencial', 'label': 'Residencial' },
+              { value: 'corporativo', 'label': 'Corporativo' }
             ]} onChange={onProjTypeChange} />
             <p className='error'>{errors.projType}</p>
             <div className='app-row stretch'>
@@ -179,7 +186,7 @@ const Register = () => {
           <div className='app-row stretch'>
             <div className='w-full'>
               <Input tooltip="teste" placeholder='Link drive (dropbox, google drive, icloud) com as imagens reais do projeto (de 3 a 5 fotos), nos formatos (jeg ou png).'
-              onChange={(e)=>onChange('link', e.target.value)} error = {errors.link} />
+                onChange={(e) => onChange('link', e.target.value)} error={errors.link} />
             </div>
           </div>
         </div>
@@ -194,7 +201,7 @@ const Register = () => {
 
         </div>
         <div className='app-col'>
-          <Button className='m-0' title='ENVIAR' onClick={onSubmit} />
+          <Button className='m-0' title={submitButtonText} onClick={onSubmit} />
         </div>
       </div>
     </div>

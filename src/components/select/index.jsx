@@ -39,7 +39,7 @@ const CustomSelect = ({ options, onChange }) => {
 
 
     <div className='select'>
-      <Select options={options} styles={customStyles} onChange={onChange} />
+      <Select placeholder="tipo" options={options} styles={customStyles} onChange={onChange} />
     </div>
   )
 }
