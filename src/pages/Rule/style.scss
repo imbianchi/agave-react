@@ -1,19 +1,22 @@
-@import '../../scss/mixin.scss';
+@import "../../scss/mixin.scss";
 
 .rule {
-    width : 75%;
+    width: 75%;
     margin: 0 auto;
     z-index: 1;
+
     .text {
-        font-size: .93rem;
+        max-height: 70vh;
+        overflow: scroll;
+        font-size: 0.9rem;
         margin-top: 24px;
         text-align: justify;
     }
 
     .logo {
-        position  : absolute;
-        bottom    : 80px;
-        right     : 24px;
+        position: absolute;
+        bottom: 80px;
+        right: 24px;
         text-align: right;
 
         img {
@@ -21,23 +24,27 @@
         }
     }
 
-    @include under-desktop {}
+    @include under-desktop {
+        .text {
+            max-height: 90vh;
+        }
+    }
 
     @include under-tablet {
         & {
-            width  : 100%;
+            width: 100%;
             padding: 0 24px;
         }
     }
 
     @include under-phone {
         .logo {
-            position  : static;
+            position: static;
             text-align: right;
-            width     : 100%;
+            width: 100%;
 
             img {
-                height       : 60px;
+                height: 60px;
                 margin-bottom: 12px;
             }
         }

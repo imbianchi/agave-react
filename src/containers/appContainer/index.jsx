@@ -8,7 +8,7 @@ const AppContainer = (props) => {
 
       {props.children}
       <div className='contact'>
-        {props.showText ? <p>INSCRIÇÕES: 05/11/21 A 05/03/22.</p> : <></>}
+        <p style={{ marginBottom: 0 }}>INSCRIÇÕES: 08/11/21 A 08/03/22.</p>
         <a href="/premioagave">
           <img src='/assets/logo-black.png' />
         </a>

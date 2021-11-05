@@ -4,19 +4,25 @@ import './style.scss'
 const Jurors = () => {
   return (
     <div className='home'>
-      <div className='h-72' />
+      <div className='h-40' />
       <p className='title'>JURADOS:</p>
       <div className='profiles'>
-        <Avatar imgUrl="/avatars/designer-guilherme.jpeg" name='Guilherme Torres' />
-        <Avatar imgUrl="/avatars/designer-jayme.jpg" name='Jayme Bernardo' />
-        <Avatar imgUrl="/avatars/designer-tania.gif" name='Tania Verri' />
+        <a href="https://instagram.com/guilhermetorres?utm_medium=copy_link">
+          <Avatar imgUrl="/avatars/designer-guilherme.jpeg" name='Guilherme Torres' />
+        </a>
+        <a href="https://instagram.com/jaymebernardo?utm_medium=copy_link">
+          <Avatar imgUrl="/avatars/designer-jayme.jpg" name='Jayme Bernardo' />
+        </a>
+        <a href="https://instagram.com/taniaverri?utm_medium=copy_link">
+          <Avatar imgUrl="/avatars/designer-tania.gif" name='Tania Verri' />
+        </a>
       </div>
       <div className='category'>
         <p className='title'>CATEGORIAS:</p>
         <div className='projects'>
           <p className='desc'><b>Projeto Residencial</b> - Prêmio Poltrona Diz por Sergio Rodrigues.</p>
-          <p className='desc'><b>Projeto corporativo</b> - Prêmio Poltrona Shell por estudiobola.</p>
-          <p className='desc'><b>Projeto outdoor</b> - Prêmio Balanço Pêndulo por Ruy Ohtake para Tidelli.</p>
+          <p className='desc'><b>Projeto Corporativo</b> - Prêmio Poltrona Shell por estudiobola.</p>
+          <p className='desc'><b>Projeto Outdoor</b> - Prêmio Balanço Pêndulo por Ruy Ohtake para Tidelli.</p>
         </div>
       </div>
       <div className='premio'>

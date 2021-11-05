@@ -3,7 +3,7 @@ import './style.scss'
 const Rule = () => {
   return (
     <div className='rule'>
-      <div className='h-72' />
+      <div className='h-40'/>
       <p className='app-title'>REGULAMENTO</p>
       <p className='text'>
         Regulamento 1º Prêmio Agave de Arquitetura
