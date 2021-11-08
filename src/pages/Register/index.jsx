@@ -15,10 +15,10 @@ const Register = () => {
   const [submitButtonText, setSubmitButtonText] = useState('ENVIAR');
   const [tooltipOpen, setTooltipOpen] = useState(false);
   const [values, setValues] = useState({
-    name: '', birthday: '', cpf: '', profession: '', rnumber: '', instagram: '', email: '', mobile: '', tel: '', cep: '', addr: '', complement: '', city: '', projName: '', projDesc: '', projType: 0, link: ''
+    name: '', birthday: '', cpf: '', profession: '', number: '', instagram: '', email: '', mobile: '', tel: '', cep: '', addr: '', complement: '', city: '', projName: '', projDesc: '', projType: 0, linkCloud: ''
   })
   const [errors, setErrors] = useState({
-    name: '', birthday: '', cpf: '', profession: '', rnumber: '', instagram: '', email: '', mobile: '', tel: '', cep: '', addr: '', complement: '', city: '', projName: '', projDesc: '', check: '', projType: '', link: ''
+    name: '', birthday: '', cpf: '', profession: '', number: '', instagram: '', email: '', mobile: '', tel: '', cep: '', addr: '', complement: '', city: '', projName: '', projDesc: '', check: '', projType: '', linkCloud: ''
   })
   const [checked, setChecked] = useState(false)
   const info = {
@@ -26,7 +26,7 @@ const Register = () => {
     birthday: { title: 'nascimento', nullable: false },
     cpf: { title: 'cpf', nullable: false },
     profession: { title: 'profissao', nullable: false },
-    rnumber: { title: 'n de registro', nullable: false },
+    number: { title: 'n de registro', nullable: false },
     instagram: { title: '@instagram', nullable: false },
     email: { title: 'e-mail', nullable: false },
     mobile: { title: 'celular', nullable: false },
@@ -37,7 +37,7 @@ const Register = () => {
     city: { title: 'cidade, estado', nullable: false },
     projName: { title: 'nome de projeto', nullable: false },
     projDesc: { title: 'breve descritivo do projeto', nullable: false },
-    link: { title: 'Link', nullable: true }
+    linkCloud: { title: 'Link', nullable: true }
   }
   const validateEmail = (email) => /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email.toLowerCase())
   const _setValues = (name, value) => {
@@ -121,7 +121,7 @@ const Register = () => {
               </div>
               <div className='app-col'>
                 <Input placeholder='n° de registro*'
-                  onChange={(e) => onChange('rnumber', e.target.value)} error={errors.rnumber} />
+                  onChange={(e) => onChange('number', e.target.value)} error={errors.number} />
               </div>
             </div>
             <div className='app-row stretch'>
@@ -206,7 +206,7 @@ const Register = () => {
               }
               <Input
                 placeholder={isMobile ? '' : 'Link drive (dropbox, google drive, icloud) com as imagens reais do projeto (de 3 a 5 fotos), nos formatos (jeg ou png).'}
-                onChange={(e) => onChange('link', e.target.value)} error={errors.link}
+                onChange={(e) => onChange('linkCloud', e.target.value)} error={errors.linkCloud}
               />
             </div>
           </div>

@@ -1,3 +1,3 @@
 export default {
-  contestRegister: '/api/register-contest',
+  contestRegister: 'http://localhost:8000/api/contest-registrations',
 }
