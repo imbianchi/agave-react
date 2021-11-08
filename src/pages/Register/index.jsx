@@ -87,7 +87,7 @@ const Register = () => {
 
     const res = await postApi(`${apiUrls.contestRegister}`, values, false)
 
-    if (res.status === 200) {
+    if (res.message === 'Inscrição realizada com sucesso') {
       setSubmitButtonText('ENVIADO!');
     } else {
       setSubmitButtonText('ERRO ):');
