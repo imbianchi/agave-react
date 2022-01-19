@@ -1,8 +1,10 @@
 function Product() {
-  return(
+  return (
     <div>
-      <h1>Conteúdo da página</h1>
+      <h1>Product</h1>
+      <p>Conteúdo da página</p>
     </div>
+
   )
 }
 
