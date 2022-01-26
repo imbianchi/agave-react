@@ -1,13 +1,12 @@
 import React from 'react';
 
-function Home() {
+const Faq = () => {
   return (
     <div>
-      <h1>Home</h1>
+      <h1>Faq</h1>
       <p>Conteúdo da página</p>
     </div>
-
   )
 }
 
-export default Home;
+export default Faq;
