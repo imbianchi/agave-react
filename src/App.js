@@ -1,6 +1,6 @@
 
 import { Route, Routes } from 'react-router-dom'
-import Navbar from './components/layout/Navbar'
+import Navbar from './components/layout'
 import routes from './routes';
 import 'bootstrap/dist/css/bootstrap.css';
 import './index.css';
@@ -10,8 +10,7 @@ const App = () => {
 
   return (
     <Routes>
-
-      {/* <Navbar /> */}
+      {/*<Navbar />*/}
       {
         routes.map((route) =>
           <>

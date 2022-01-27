@@ -1,3 +1,4 @@
+import About from './pages/About';
 import Categories from './pages/Categories';
 import Contact from './pages/Contact';
 import Designers from './pages/Designers';
@@ -13,6 +14,12 @@ import Rule from './pages/Rule';
 
 
 export default [
+  {
+    exact: true,
+    path: '/about',
+    element: <About />,
+    props: {},
+  },
   {
     exact: true,
     path: '/categories',
