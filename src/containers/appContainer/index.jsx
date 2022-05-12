@@ -1,4 +1,3 @@
-import { Footer } from "../../components"
 import Background from "../../components/background"
 import './style.scss'
 const AppContainer = (props) => {
@@ -13,7 +12,6 @@ const AppContainer = (props) => {
           <img src='/assets/logo-black.png' />
         </a>
       </div>
-      <Footer />
 
     </div>
   )
