@@ -92,6 +92,8 @@
   @include under-tablet {
     & {
       padding: 0px 12px;
+      display: flex;
+      flex-direction: column-reverse;
     }
 
     .profiles,
