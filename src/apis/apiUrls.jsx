@@ -1,3 +1,3 @@
 export default {
-  contestRegister: 'https://admin.agavecasa.com.br/api/contest-registrations',
+  contestRegister: 'https://agavecasa.com.br/wp-json/wp/v2/inscricoes',
 }
