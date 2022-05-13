@@ -329,22 +329,32 @@ const Rule = () => {
 
         <p>
 
-          <small>
-          Documento assinado eletronicamente por Adriana Alves dos Santos, Assistente técnico, em
-          03/05/2022 às 15:17, conforme horário oficial de Brasília, com fundamento no art. 6o, § 1o, do
-          Decreto no 8.539, de 8 de outubro de 2015.
-          </small> 
+        <small>
+        Documento assinado eletronicamente por Adriana Alves dos Santos, Assistente técnico, em
+        03/05/2022 às 15:17, conforme horário oficial de Brasília, com fundamento no art. 6o, § 1o, do
+        Decreto no 8.539, de 8 de outubro de 2015.
+        </small> 
 
-          <br />
+        <br />
 
-          <small>
-          A autenticidade deste documento pode ser conferida no site:
-          <a href="https://scpc.seae.fazenda.gov.br/scpc/consulta_codigo_autenticacao.jsf">https://scpc.seae.fazenda.gov.br/scpc/consulta_codigo_autenticacao.jsf</a>, informando o código
-          verificador ANA.RQT.KBG
-          </small>
+        <small>
+        A autenticidade deste documento pode ser conferida no site:
+        <a href="https://scpc.seae.fazenda.gov.br/scpc/consulta_codigo_autenticacao.jsf">https://scpc.seae.fazenda.gov.br/scpc/consulta_codigo_autenticacao.jsf</a>, informando o código
+        verificador ANA.RQT.KBG
+        </small>
 
-        </p>
       </p>
+
+      </p>
+
+      <p className="text-center">
+      Para visualizar o regulamento completo, &nbsp;
+      <a href="/documents/regulamento-agave.pdf" target="_blank" rel="noreferrer noopener"  className="mt-5 text-center">
+      clique aqui
+      </a>
+      .
+      </p>
+    
     </div>
   )
 }
