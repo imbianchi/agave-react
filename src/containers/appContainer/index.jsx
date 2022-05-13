@@ -7,7 +7,7 @@ const AppContainer = (props) => {
 
       {props.children}
       <div className='contact'>
-        <p style={{ marginBottom: 0 }}>INSCRIÇÕES: 08/11/21 A 08/03/22.</p>
+        <p style={{ marginBottom: 0 }}>INSCRIÇÕES: 10/05/22 a 14/10/22.</p>
         <a href="/premioagave">
           <img src='/assets/logo-black.png' />
         </a>
