@@ -48,13 +48,21 @@
     font-size: 12px;
   }
 
+  .checkbox-container {
+    margin: 10px 0px;
+
+    p.text{
+      margin: 0;
+    }
+  }
+
   .datas,
   .informations {
-    min-height: 360px;
+    min-height: 300px;
   }
 
   .cep {
-    min-height: 200px;
+    min-height: 150px;
   }
 
   p.error {

@@ -18,9 +18,10 @@ const Register = () => {
     name: '', birthday: '', cpf: '', profession: '', number: '', instagram: '', email: '', mobile: '', tel: '', cep: '', addr: '', complement: '', city: '', projName: '', projDesc: '', projType: 0, linkCloud: ''
   })
   const [errors, setErrors] = useState({
-    name: '', birthday: '', cpf: '', profession: '', number: '', instagram: '', email: '', mobile: '', tel: '', cep: '', addr: '', complement: '', city: '', projName: '', projDesc: '', check: '', projType: '', linkCloud: ''
+    name: '', birthday: '', cpf: '', profession: '', number: '', instagram: '', email: '', mobile: '', tel: '', cep: '', addr: '', complement: '', city: '', projName: '', projDesc: '', check: '', checkTerm: '', projType: '', linkCloud: ''
   })
   const [checked, setChecked] = useState(false)
+  const [checkedTerm, setCheckedTerm] = useState(false)
   const info = {
     name: { title: 'nome completo', nullable: false },
     birthday: { title: 'nascimento', nullable: false },
@@ -63,6 +64,12 @@ const Register = () => {
     if (checked)
       _setErrors('check', '')
     setChecked(checked)
+  }
+
+  const onCheckboxTermChange = (checkedTerm) => {
+    if (checkedTerm)
+      _setErrors('check', '')
+    setCheckedTerm(checkedTerm)
   }
 
   const onProjTypeChange = (value) => {
@@ -147,6 +154,8 @@ const Register = () => {
             </div>
           </div>
 
+          <p className='app-title text-uppercase'>Endereço</p>
+
           <div className='cep'>
             <div className='app-row stretch'>
               <div className='app-col'>
@@ -198,30 +207,35 @@ const Register = () => {
               id="TooltipExample"
             >
               <Tooltip placement="top" isOpen={tooltipOpen} target="TooltipExample" toggle={() => setTooltipOpen(!tooltipOpen)}>
-                Link drive (dropbox, google drive, icloud) com as imagens reais do projeto (de 3 a 5 fotos), nos formatos (jeg ou png).
+                Link drive (dropbox, google drive, icloud) com as imagens reais do projeto (de 3 a 5 fotos), nos formatos (jpeg ou png).
               </Tooltip>
               {
                 isMobile && (
-                  <small>Link drive (dropbox, google drive, icloud) com as imagens reais do projeto (de 3 a 5 fotos), nos formatos (jeg ou png).</small>
+                  <small>Link drive (dropbox, google drive, icloud) com as imagens reais do projeto (de 3 a 5 fotos), nos formatos (jpeg ou png).</small>
                 )
               }
-              <Input
-                placeholder={isMobile ? '' : 'Link drive (dropbox, google drive, icloud) com as imagens reais do projeto (de 3 a 5 fotos), nos formatos (jeg ou png).'}
-                onChange={(e) => onChange('linkCloud', e.target.value)} error={errors.linkCloud}
-              />
+
+            <Checkbox
+              onChange={onCheckboxChange}
+              label='Confirmo o envio do termo assinado.'
+              error={errors.check}
+            />
+            
+
+            <Checkbox
+              onChange={onCheckboxTermChange}
+              label='Autorizo a coleta dos meus dados pessoais para cadastro nos programas de relacionamento Agave.
+              Aceito receber comunicações sobre as marcas e produtos Agave via e-mail ou WhatsApp.
+              Reconheço que li e aceito todos os termos do “Regulamento” disponibilizado '
+              error={errors.check}
+              link={true}
+            />
             </div>
           </div>
         </div>
       </div>
       <div className='app-row'>
         <div className='app-col'>
-          <Checkbox
-            onChange={onCheckboxChange}
-            label='Autorizo a coleta dos meus dados pessoais para cadastro nos programas de relacionamento Agave.
-            Aceito receber comunicações sobre as marcas e produtos Agave via e-mail ou WhatsApp.
-            Reconheço que li e aceito todos os termos do “Regulamento” disponibilizado no https://agavecasa.com.br/rule.'
-            error={errors.check}
-          />
 
         </div>
         <div className='app-col'>
