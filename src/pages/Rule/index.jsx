@@ -9,7 +9,7 @@ const Rule = () => {
       <p className='text'>
         <h2 className="text-center">REGULAMENTO/PLANO DE OPERAÇÃO DA PROMOÇÃO</h2>
         <h3 className="text-center">PRÊMIO AGAVE</h3>
-        <h4>CERTIFICADO DE AUTORIZAÇÃO SEAE/ME Nº 03.019634/2022</h4>
+        <h4 className="text-center">CERTIFICADO DE AUTORIZAÇÃO SEAE/ME Nº 03.019634/2022</h4>
 
         <p>
         1 - EMPRESAS PROMOTORAS:
