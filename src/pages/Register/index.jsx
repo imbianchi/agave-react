@@ -104,6 +104,13 @@ const Register = () => {
 
   return (
     <div className='jurors'>
+      <div className="app-row justify-content-start">
+        <div className="app-col text-left">
+          <a className='app-back' onClick={()=> window.history.back()}> 
+            VOLTAR
+          </a>
+        </div>
+      </div>
       <div className='app-row'>
         <div className='app-col'>
           <div className='h-72'></div>

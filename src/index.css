@@ -62,7 +62,7 @@
 .h-72 {
   height: 72px;
 }
-.app-title {
+.app-title, .app-back {
   display: inline-block;
   min-width: 160px;
   width: auto;
@@ -70,13 +70,39 @@
   margin: 8px 0px;
   text-align: center;
   color: white;
-  background-color: black;
-  border: 1px solid black;
   border-radius: 4px;
 }
+
+.app-title{
+  background-color: black;
+  border: 1px solid black;
+}
+
+.app-back{
+  background-color: gray;
+  border: 1px solid gray;
+  cursor: pointer;
+  margin-left: 10px;
+  text-decoration: none;
+}
+
+.jurors .app-back{
+  margin-left: 100px;
+  margin-top: 20px;
+}
+
+.app-back:hover{
+  background: rgb(41, 41, 41);
+  border-color: rgb(41, 41, 41);
+  color: #fff;
+}
+
 @media (max-width: 480px) {
   .videoWrapper {
     padding: 1rem;
+  }
+  .app-back{
+    margin-left: 0px;
   }
 }
 
