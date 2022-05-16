@@ -28,8 +28,8 @@ const Jurors = () => {
       <div className='premio'>
         <img className='premio-img' src='/assets/premio.png' />
         <div className='buttons'>
-          <Button link={true} href='/rule' className='w-120' title='REGULAMENTO' />
-          <Button link={true} href='/register' className='w-120' title='INSCRIÇÃO' />
+          <Button link={true} href='/premioagave/rule' className='w-120' title='REGULAMENTO' />
+          <Button link={true} href='/premioagave/register' className='w-120' title='INSCRIÇÃO' />
         </div>
       </div>
     </div>

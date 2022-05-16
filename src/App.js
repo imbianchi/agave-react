@@ -15,8 +15,8 @@ const App = () => {
         <BrowserRouter>
           {/* <Route exact path="/" component={() => <Redirect to='/premioagave' />} /> */}
           <Route exact path="/" component={Jurors} />
-          <Route path="/register" component={Register} />
-          <Route path="/rule" component={Rule} />
+          <Route path="/premioagave/register" component={Register} />
+          <Route path="/premioagave/rule" component={Rule} />
         </BrowserRouter>
       </Switch>
     </AppContainer>
