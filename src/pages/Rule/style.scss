@@ -5,6 +5,10 @@
     margin: 0 auto;
     z-index: 1;
 
+    h2, h3, h4{
+        font-size: 20px;
+    }
+
     .text {
         max-height: 70vh;
         overflow: scroll;
