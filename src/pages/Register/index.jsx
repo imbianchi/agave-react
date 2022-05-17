@@ -11,6 +11,7 @@ import { postApi } from '../../apis/apis'
 import apiUrls from '../../apis/apiUrls'
 
 const Register = () => {
+  const [selectedFile, setSelectedFile] = useState({});
   const [loading, setLoading] = useState(false);
   const [submitButtonText, setSubmitButtonText] = useState('ENVIAR');
   const [tooltipOpen, setTooltipOpen] = useState(false);
@@ -89,11 +90,11 @@ const Register = () => {
     if (values.projType == 0) return _setErrors('projType', 'Selecione o tipo.')
     if (values.projDesc.length > 400) return _setErrors('projDesc', 'O descritivo do projeto deve ter no máximo 400 caracteres.')
     if (!checked) return _setErrors('check', 'Obrigatório aceitar o acordo para participar.')
+    values.selectedFile = selectedFile;
 
     setLoading(true);
 
     const res = await postApi(`${apiUrls.contestRegister}`, values)
-    console.log(res)
 
     if (res.id) {
       setSubmitButtonText('ENVIADO!');
@@ -213,14 +214,28 @@ const Register = () => {
               className='w-full'
               id="TooltipExample"
             >
-              <Tooltip placement="top" isOpen={tooltipOpen} target="TooltipExample" toggle={() => setTooltipOpen(!tooltipOpen)}>
-                Link drive (dropbox, google drive, icloud) com as imagens reais do projeto (de 3 a 5 fotos), nos formatos (jpeg ou png).
-              </Tooltip>
-              {
-                isMobile && (
-                  <small>Link drive (dropbox, google drive, icloud) com as imagens reais do projeto (de 3 a 5 fotos), nos formatos (jpeg ou png).</small>
-                )
-              }
+
+            <div>
+              {/* <label for="cloudFile" class="btn btn-dark text-uppercase">Fazer upload dos arquivos</label> */}
+              {/* <Input
+                type="file"
+                className="d-none"
+                onChange={(e) => setSelectedFile(e.target.files[0])}
+                id="cloudFile"
+                value={selectedFile}
+              /> */}
+              <a className="btn btn-dark text-uppercase" href="/documents/termo.pdf" download>
+                Fazer download do termo
+              </a>
+              <br/>
+              <a className="btn mt-2 btn-dark text-uppercase" href="https://drive.google.com/drive/folders/1oyDN70MKHQAhkAXIn0X3rh12Uq3I7qvl" target="_blank"  rel="noreferrer noopener">
+                Fazer upload dos arquivos
+              </a>
+              <br/>
+              <small className="mb-3 mt-1 d-block">
+                Crie uma pasta com seu nome e insira os arquivos mencionados com o termo assinado incluso
+              </small>
+            </div>
 
             <Checkbox
               onChange={onCheckboxChange}
@@ -237,6 +252,7 @@ const Register = () => {
               error={errors.check}
               link={true}
             />
+
             </div>
           </div>
         </div>
