@@ -18,7 +18,7 @@ const Checkbox = ({ onChange, label, error = 'df', link}) => {
         <div>
           <p className='text'>{label}
           {
-            link && <a href="https://agavecasa.com.br/premioagave/rule/" target="_blank" rel="noreferrer noopener">neste link</a>
+            link && <a href="https://agavecasa.com.br/premioagave/rule/" target="_blank" className="text-dark" rel="noreferrer noopener">neste link</a>
           }
           </p>
         </div></div>
