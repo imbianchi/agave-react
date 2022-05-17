@@ -90,11 +90,10 @@ const Register = () => {
     if (values.projType == 0) return _setErrors('projType', 'Selecione o tipo.')
     if (values.projDesc.length > 400) return _setErrors('projDesc', 'O descritivo do projeto deve ter no máximo 400 caracteres.')
     if (!checked) return _setErrors('check', 'Obrigatório aceitar o acordo para participar.')
-    values.selectedFile = selectedFile;
 
     setLoading(true);
 
-    const res = await postApi(`${apiUrls.contestRegister}`, values)
+    const res = await postApi(`${apiUrls.contestRegister}`, values, selectedFile)
 
     if (res.id) {
       setSubmitButtonText('ENVIADO!');
@@ -216,24 +215,27 @@ const Register = () => {
             >
 
             <div>
-              {/* <label for="cloudFile" class="btn btn-dark text-uppercase">Fazer upload dos arquivos</label> */}
-              {/* <Input
+              
+              <a className="btn btn-dark text-uppercase mb-2" href="/documents/termo.pdf" download>
+                Fazer download do termo
+              </a>
+
+              <br/>
+
+              <label for="cloudFile" class="btn btn-dark text-uppercase mb-2">Fazer upload dos arquivos</label>
+              <Input
                 type="file"
                 className="d-none"
                 onChange={(e) => setSelectedFile(e.target.files[0])}
                 id="cloudFile"
                 value={selectedFile}
-              /> */}
-              <a className="btn btn-dark text-uppercase" href="/documents/termo.pdf" download>
-                Fazer download do termo
-              </a>
-              <br/>
-              <a className="btn mt-2 btn-dark text-uppercase" href="https://drive.google.com/drive/folders/1oyDN70MKHQAhkAXIn0X3rh12Uq3I7qvl" target="_blank"  rel="noreferrer noopener">
+              />
+
+              {/* <a className="btn mt-2 btn-dark text-uppercase" href="https://drive.google.com/drive/folders/1oyDN70MKHQAhkAXIn0X3rh12Uq3I7qvl" target="_blank"  rel="noreferrer noopener">
                 Fazer upload dos arquivos
-              </a>
-              <br/>
-              <small className="mb-3 mt-1 d-block">
-                Crie uma pasta com seu nome e insira os arquivos mencionados com o termo assinado incluso
+              </a> */}
+              <small className="mb-3 d-block">
+                Faça o upload do arquivo (.zip)
               </small>
             </div>
 
