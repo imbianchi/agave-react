@@ -125,13 +125,11 @@ const Rule = () => {
         </p>
 
         <p>
-          PRÊMIOS
+          PRÊMIOS: 
           Prêmio Categoria Projeto Residencial: Poltrona Diz assento/encosto madeira c#5: 8.121,10 |
           Prêmio Categoria Projeto Corporativo: Poltrona Shell: 4.543,36 |
           Prêmio Categoria Projeto Outdoor: Balanço Pêndulo: 100,00
-        </p>
 
-        <p>
           8 - PREMIAÇÃO TOTAL:
           Quantidade Total de Prêmios: 3 | Valor total da Promoção: R$ 12.764,46
         </p>
