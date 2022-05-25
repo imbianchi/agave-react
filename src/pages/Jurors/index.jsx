@@ -26,7 +26,15 @@ const Jurors = () => {
         </div>
       </div>
       <div className='premio'>
-        <img className='premio-img' src='/assets/premio.png' />
+        <div>
+          <img className='premio-img' src='/assets/premio.png' />
+          <p>
+            Projetos com mobiliário e objetos Agave Casa são por natureza irreverentes, sofisticados e esbanjam originalidade.
+          </p>
+          <p>
+            Esse é seu momento de mostrar para o mercado o resultado dessa combinação incrível: <strong>Seu talento + peças Agave Casa</strong>.
+          </p>
+        </div>
         <div className='buttons'>
           <Button link={true} href='/premioagave/rule' className='w-120' title='REGULAMENTO' />
           <Button link={true} href='/premioagave/register' className='w-120' title='INSCRIÇÃO' />
