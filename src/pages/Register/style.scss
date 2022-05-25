@@ -3,6 +3,12 @@
 .jurors {
   z-index: 1;
 
+  .close{
+    border: 1px solid #454545;
+    border-radius: 2px;
+    padding: 0px 10px;
+  }
+
   .app-row {
     &.stretch {
       width          : 100%;

@@ -90,7 +90,7 @@ const Register = () => {
     if (values.projType == 0) return _setErrors('projType', 'Selecione o tipo.')
     if (values.projDesc.length > 400) return _setErrors('projDesc', 'O descritivo do projeto deve ter no máximo 400 caracteres.')
     if (!checked) return _setErrors('check', 'Obrigatório aceitar o acordo para participar.')
-
+    setSubmitButtonText('Enviando...');
     setLoading(true);
 
     const res = await postApi(`${apiUrls.contestRegister}`, values, selectedFile)
@@ -223,6 +223,7 @@ const Register = () => {
               <br/>
 
               <label for="cloudFile" class="btn btn-dark text-uppercase mb-2">Fazer upload dos arquivos</label>
+              <p className="text-success"> {selectedFile.name && "Arquivo anexado"} </p>
               <Input
                 type="file"
                 className="d-none"
