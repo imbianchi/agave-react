@@ -5,17 +5,19 @@ const Jurors = () => {
   return (
     <div className='home'>
       <div className='h-40' />
-      <p className='title'>JURADOS:</p>
-      <div className='profiles'>
-        <a target="_blank" href="https://instagram.com/guilhermetorres?utm_medium=copy_link" rel="noreferrer">
-          <Avatar imgUrl="/avatars/designer-guilherme.jpeg" name='Guilherme Torres' />
-        </a>
-        <a target="_blank" href="https://instagram.com/jaymebernardo?utm_medium=copy_link" rel="noreferrer">
-          <Avatar imgUrl="/avatars/designer-jayme.jpg" name='Jayme Bernardo' />
-        </a>
-        <a target="_blank" href="https://instagram.com/taniaverri?utm_medium=copy_link" rel="noreferrer">
-          <Avatar imgUrl="/avatars/designer-tania.gif" name='Tania Verri' />
-        </a>
+      <div className="jurors-avatar">
+        <p className='title'>JURADOS:</p>
+        <div className='profiles'>
+          <a target="_blank" href="https://instagram.com/guilhermetorres?utm_medium=copy_link" rel="noreferrer">
+            <Avatar imgUrl="/avatars/designer-guilherme.jpeg" name='Guilherme Torres' />
+          </a>
+          <a target="_blank" href="https://instagram.com/jaymebernardo?utm_medium=copy_link" rel="noreferrer">
+            <Avatar imgUrl="/avatars/designer-jayme.jpg" name='Jayme Bernardo' />
+          </a>
+          <a target="_blank" href="https://instagram.com/taniaverri?utm_medium=copy_link" rel="noreferrer">
+            <Avatar imgUrl="/avatars/designer-tania.gif" name='Tania Verri' />
+          </a>
+        </div>
       </div>
       <div className='category'>
         <p className='title'>CATEGORIAS:</p>
