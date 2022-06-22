@@ -2,10 +2,8 @@ import Input from '../../components/input'
 import RichInput from '../../components/richInput'
 import Button from '../../components/button'
 import CustomSelect from '../../components/select'
-import { isMobile } from 'react-device-detect';
 import './style.scss'
 import Checkbox from '../../components/checkbox'
-import { Tooltip } from 'reactstrap';
 import { useState } from 'react'
 import { postApi } from '../../apis/apis'
 import apiUrls from '../../apis/apiUrls'
@@ -14,12 +12,11 @@ const Register = () => {
   const [selectedFile, setSelectedFile] = useState({});
   const [loading, setLoading] = useState(false);
   const [submitButtonText, setSubmitButtonText] = useState('ENVIAR');
-  const [tooltipOpen, setTooltipOpen] = useState(false);
   const [values, setValues] = useState({
-    name: '', birthday: '', cpf: '', profession: '', number: '', instagram: '', email: '', mobile: '', tel: '', cep: '', addr: '', complement: '', city: '', projName: '', projDesc: '', projType: 0, linkCloud: ''
+    name: '', birthday: '', cpf: '', profession: '', number: '', instagram: '', email: '', mobile: '', tel: '', cep: '', addr: '', complement: '', city: '', projName: '', projDesc: '', projType: 0
   })
   const [errors, setErrors] = useState({
-    name: '', birthday: '', cpf: '', profession: '', number: '', instagram: '', email: '', mobile: '', tel: '', cep: '', addr: '', complement: '', city: '', projName: '', projDesc: '', check: '', checkTerm: '', projType: '', linkCloud: ''
+    name: '', birthday: '', cpf: '', profession: '', number: '', instagram: '', email: '', mobile: '', tel: '', cep: '', addr: '', complement: '', city: '', projName: '', projDesc: '', check: '', checkTerm: '', projType: ''
   })
   const [checked, setChecked] = useState(false)
   const [checkedTerm, setCheckedTerm] = useState(false)
@@ -39,7 +36,6 @@ const Register = () => {
     city: { title: 'cidade, estado', nullable: false },
     projName: { title: 'nome de projeto', nullable: false },
     projDesc: { title: 'breve descritivo do projeto', nullable: false },
-    linkCloud: { title: 'Link', nullable: true }
   }
   const validateEmail = (email) => /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email.toLowerCase())
   const _setValues = (name, value) => {
@@ -92,6 +88,8 @@ const Register = () => {
     if (!checked) return _setErrors('check', 'Obrigatório aceitar o acordo para participar.')
     setSubmitButtonText('Enviando...');
     setLoading(true);
+
+    console.log(values, '------', selectedFile);
 
     const res = await postApi(`${apiUrls.contestRegister}`, values, selectedFile)
 
@@ -231,10 +229,6 @@ const Register = () => {
                 id="cloudFile"
                 value={selectedFile}
               />
-
-              {/* <a className="btn mt-2 btn-dark text-uppercase" href="https://drive.google.com/drive/folders/1oyDN70MKHQAhkAXIn0X3rh12Uq3I7qvl" target="_blank"  rel="noreferrer noopener">
-                Fazer upload dos arquivos
-              </a> */}
               <small className="mb-3 d-block">
                 Faça o upload do arquivo (.zip)
               </small>
